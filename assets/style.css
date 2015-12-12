@@ -75,21 +75,24 @@ html {
     ======================================================================
 */
 
-body {
-  background-color: #2b2b2b;
+
+@media only screen and (max-width: 760px){
+  .vidgrid .fivecolumn {
+    width: 50% !important;
+  }
 }
 
-.top {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-  display: inline-block;
+body {
+  background-color: #2b2b2b;
 }
 
 .init {
   width: 100%;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  display: inline-block;
 }
 
 h1 {

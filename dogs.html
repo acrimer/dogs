@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../dogs/assets/style.css" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
-		var dogVids = ['n08ZLsAiYAE','wx3MqcWiHG4','y27ywcx0HNM','tea6HiYZoKk','oNRcagcDbJw','7DFJUVwrKlQ','zkaK0LbeTYc'];
+		var dogVids = ['n08ZLsAiYAE','wx3MqcWiHG4','y27ywcx0HNM','tea6HiYZoKk','oNRcagcDbJw','7DFJUVwrKlQ'];
 		var displayed = false;
 
 		function dogs(){
@@ -18,7 +18,7 @@
 			};
 			displayVids(vids);
 			var button = document.getElementById('start');
-			button.setAttribute('value','More!');
+			button.setAttribute('value','More Dogs!');
 			var appControls = document.getElementById('controls');
 			appControls.className('clicked');
 		};
@@ -53,9 +53,6 @@
 </head>
 <body>
 	<div class="app">
-		<div class="top">
-			<h1>Dogs!</h1>
-		</div>
 		<div class="init" id="controls">
 			<input type="submit" class="button" id="start" onclick="dogs()" value="Dogs!">
 		</div>
