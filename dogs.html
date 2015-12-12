@@ -1,0 +1,66 @@
+
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Dogs!</title>
+	<link rel="stylesheet" href="../dogs/assets/style.css" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+		var dogVids = ['n08ZLsAiYAE','wx3MqcWiHG4','y27ywcx0HNM','tea6HiYZoKk','oNRcagcDbJw','7DFJUVwrKlQ','zkaK0LbeTYc'];
+		var displayed = false;
+
+		function dogs(){
+			var vids = [];
+			for (var i = 0; i < 25; i++){
+				var vid = Math.floor(Math.random()*(dogVids.length));
+				var chosenVid = dogVids[vid];
+				vids.push(chosenVid);
+			};
+			displayVids(vids);
+			var button = document.getElementById('start');
+			button.setAttribute('value','More!');
+			var appControls = document.getElementById('controls');
+			appControls.className('clicked');
+		};
+
+		function displayVids(vids){
+			var page = document.getElementById('vidgrid');
+			if (displayed===true){
+				page.innerHTML = "";
+			};
+			for (u = 0; u < vids.length; u++){
+				var box = document.createElement('div');
+				box.className = "fivecolumn";
+				box.id = u.toString();
+				page.appendChild(box);
+
+				var videoWrap = document.createElement('div');
+				videoWrap.className = "videowrap";
+				box.appendChild(videoWrap);
+
+				var frame = document.createElement('iframe');
+				frame.setAttribute('width','560');
+				frame.setAttribute('height','315');
+				frame.setAttribute('src','https://www.youtube.com/embed/' + vids[u] + '?wmode=transparent&showinfo=0&autoplay=1&rel=0');
+				frame.setAttribute('frameborder','0');
+				frame.setAttribute('allowfullscreen','true');
+				frame.setAttribute('volume','0');
+				videoWrap.appendChild(frame);
+			};
+			displayed = true;
+		};
+	</script>
+</head>
+<body>
+	<div class="app">
+		<div class="top">
+			<h1>Dogs!</h1>
+		</div>
+		<div class="init" id="controls">
+			<input type="submit" class="button" id="start" onclick="dogs()" value="Dogs!">
+		</div>
+		<div class="vidgrid" id="vidgrid">
+		</div>
+	</div>
+</body>
+</html>
